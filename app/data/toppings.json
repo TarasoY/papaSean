@@ -1,0 +1,15 @@
+{ 
+     "toppings": [  
+
+          { "name": "Bacon", "price": 6.3 },  
+          { "name": "Pepperoni", "price": 3.2 },   
+          { "name": "Tomatotes", "price": 2.4 }, 
+          { "name": "Mushrooms" , "price": 4 },  
+          { "name": "Herbs", "price": 2 }, 
+          { "name": "Chicken", "price": 5.7 }, 
+          { "name": "Pineapple", "price": 4.8 }, 
+          { "name": "Ham", "price": 7 },  
+          { "name": "Cheese", "price": 5.2 },  
+          { "name": "Sweetcorn", "price": 3.5 } 
+     ]
+} 

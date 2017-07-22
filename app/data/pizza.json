@@ -1,0 +1,33 @@
+{
+    "pizzas": [ 
+
+        { 
+            "name": "Cool NewYorker", 
+            "type": "NewYorker", 
+            "toppings": [ 
+                { "name": "Bacon", "price": 6.3 },   
+                { "name": "Pepperoni", "price": 3.2 },  
+                { "name": "Ham", "price": 7 },  
+                { "name": "Mushrooms" , "price": 4 } 
+            ] 
+        },
+        { 
+            "name": "Awesome Margarita", 
+            "type": "Margarita", 
+            "toppings": [ 
+                { "name": "Tomatotes", "price": 2.4 },  
+                { "name": "Herbs", "price": 2 },   
+                { "name": "Cheese", "price": 5.2 } 
+            ] 
+        },
+        { 
+            "name": "Fine Hawaiian",  
+            "type": "Hawaiian", 
+            "toppings": [ 
+                { "name": "Ham", "price": 7 },     
+                { "name": "Pineapple", "price": 4.8 },    
+                { "name": "Sweetcorn", "price": 3.5 } 
+            ] 
+        }
+    ]
+}
