@@ -1,7 +1,7 @@
 {
-  "name": "optimizedhtml",
-  "version": "2.0.1",
-  "description": "OptimizedHTML - Start HTML Template",
+  "name": "papaSean",
+  "version": "0.0.1",
+  "description": "pet project pizza house",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,9 @@
   "author": "WebDesign Master",
   "license": "ISC",
   "devDependencies": {
+    "babelify": "^7.3.0",
     "browser-sync": "^2.18.11",
+    "browserify": "^14.4.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
@@ -19,10 +21,12 @@
     "gulp-imagemin": "^3.2.0",
     "gulp-notify": "^3.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-rsync": "0.0.8",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.1.2",
     "gulp-util": "^3.0.8",
-    "vinyl-ftp": "^0.6.0"
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "babel-core": "^6.25.0"
   }
 }

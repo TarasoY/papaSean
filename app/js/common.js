@@ -113,8 +113,12 @@ $(function() {
 	console.log(testPizza.price);
 
 
-	let test = 'bbb';
+	// let test = 'bbb';
 
-	console.log('test', test);
+	// console.log('test', test);
 
 });
+
+
+
+	
