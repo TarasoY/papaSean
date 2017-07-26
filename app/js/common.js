@@ -39,7 +39,7 @@ $(function() {
 
 	// post data via fetch
 	function post(data) {
-
+		return;
 	}
 
 
@@ -77,43 +77,44 @@ $(function() {
 		}, 0)
 	}
 
-	//pizza onj 
+	//pizza obj 
 
 	var Pizza = {
-		name: _name;
-		type: _type;
-		toppings: _toppings;
-		meta: {};
-
+		name: _name,
+		type: _type,
+		toppings: _toppings,
+		meta: {},
 		setData: function(data) {
 			console.log('set data', data);
-		}
+		},
 		create: function(data) {
 			this.meta.createdAt = (new Date()).toLocaleString();
-
 			console.log('create', data);
-		}
+		},
 		update: function(data) {
 			this.meta.updatedAt = (new Date()).toLocaleString();
-
 			console.log('update', data);
-		}
+		},
 		delete: function(id) {
 			console.log('delete', id);
-		}
+		},
 		showToppings: function() {
 			console.log('show toppings');
-		}
+		},
 		hasTopping: function(topping) {
 			return this.toppings.includes(topping);
-		}
+		},
 		price: toppings.reduce(function(sum, topping) {
 			return sum + topping.price;
 		}, 0)
-	}
+	};
 
 	
+	//inherit
 
+	var Margarita = {};
+
+	Object.assign(Pizza);
 
 });
 
