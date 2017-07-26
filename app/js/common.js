@@ -1,6 +1,6 @@
 $(function() {
 
-	// get data via XMLHttpRequest
+	// get data via XMLHttpRequest with promise
 	function get(url) {
 		return new Promise(function(resolve, reject) {
 			var xhttp = new XMLHttpRequest();
@@ -27,55 +27,20 @@ $(function() {
 	}).then(function(toppings) {
 		_toppings = toppings;
 		console.log(toppings);
+
+		var testPizza = new Pizza('Hot Margarita', 'margarita', [{ "name": "Bacon", "price": 6.3 },{ "name": "Pepperoni", "price": 3.2 }]);
+		console.log(testPizza.price);
+		console.log(testPizza.create('data'));
+		console.log(testPizza.meta.createdAt);
+
 	}).catch(function(error) {
 		console.log(error);
-	})
+	});
 
-	var _pizzas = [
+	// post data via fetch
+	function post(data) {
 
-        {
-            "name": "Cool NewYorker",
-            "type": "NewYorker",
-            "toppings": [
-                { "name": "Bacon", "price": 6.3 },
-                { "name": "Pepperoni", "price": 3.2 },
-                { "name": "Ham", "price": 7 },
-                { "name": "Mushrooms" , "price": 4 }
-            ]
-        },
-        {
-            "name": "Awesome Margarita",
-            "type": "Margarita",
-            "toppings": [
-                { "name": "Tomatotes", "price": 2.4 },
-                { "name": "Herbs", "price": 2 },
-                { "name": "Cheese", "price": 5.2 }
-            ]
-        },
-        {
-            "name": "Fine Hawaiian",
-            "type": "Hawaiian",
-            "toppings": [
-                { "name": "Ham", "price": 7 },
-                { "name": "Pineapple", "price": 4.8 },
-                { "name": "Sweetcorn", "price": 3.5 }
-            ]
-        }
-    ];
-	var _toppings = [
-
-          { "name": "Bacon", "price": 6.3 },
-          { "name": "Pepperoni", "price": 3.2 },
-          { "name": "Tomatotes", "price": 2.4 },
-          { "name": "Mushrooms" , "price": 4 },
-          { "name": "Herbs", "price": 2 },
-          { "name": "Chicken", "price": 5.7 },
-          { "name": "Pineapple", "price": 4.8 },
-          { "name": "Ham", "price": 7 },
-          { "name": "Cheese", "price": 5.2 },
-          { "name": "Sweetcorn", "price": 3.5 }
-     ];
-
+	}
 
 
 	// main interface
@@ -83,15 +48,19 @@ $(function() {
 		this.name = _name;
 		this.type = _type;
 		this.toppings = _toppings;
-		this.meta = _meta;
+		this.meta = {};
 
 		this.setData = function(data) {
 			console.log('set data', data);
 		}
 		this.create = function(data) {
+			this.meta.createdAt = (new Date()).toLocaleString();
+
 			console.log('create', data);
 		}
 		this.update = function(data) {
+			this.meta.updatedAt = (new Date()).toLocaleString();
+
 			console.log('update', data);
 		}
 		this.delete = function(id) {
@@ -108,14 +77,43 @@ $(function() {
 		}, 0)
 	}
 
-	var testPizza = new Pizza('Hot Margarita', 'margarita', [{ "name": "Bacon", "price": 6.3 },{ "name": "Pepperoni", "price": 3.2 }]);
+	//pizza onj 
 
-	console.log(testPizza.price);
+	var Pizza = {
+		name: _name;
+		type: _type;
+		toppings: _toppings;
+		meta: {};
 
+		setData: function(data) {
+			console.log('set data', data);
+		}
+		create: function(data) {
+			this.meta.createdAt = (new Date()).toLocaleString();
 
-	// let test = 'bbb';
+			console.log('create', data);
+		}
+		update: function(data) {
+			this.meta.updatedAt = (new Date()).toLocaleString();
 
-	// console.log('test', test);
+			console.log('update', data);
+		}
+		delete: function(id) {
+			console.log('delete', id);
+		}
+		showToppings: function() {
+			console.log('show toppings');
+		}
+		hasTopping: function(topping) {
+			return this.toppings.includes(topping);
+		}
+		price: toppings.reduce(function(sum, topping) {
+			return sum + topping.price;
+		}, 0)
+	}
+
+	
+
 
 });
 
